@@ -251,6 +251,9 @@ img {
 	}
 	.content {
 		width: 82%;
+		&.content-full {
+			width: 100%;
+		}
 		#header {
 			padding: 15px 25px;
 			position: relative;
@@ -282,21 +285,6 @@ img {
 						right: 15px;
 						top: 8px;
 						max-width: 15px;
-					}
-				}
-			}
-			.icons_right {
-				position: absolute;
-				top: 19px;
-				right: 25px;
-				> a {
-					text-decoration: none;
-					display: inline-flex;
-					margin: 0 12px;
-					align-items: center;
-					justify-content: center;
-					> img {
-						max-width: 25px;
 					}
 				}
 			}

@@ -7,5 +7,19 @@
 	"semi": true,
 	"jsxSingleQuote": true,
 	"jsxBracketSameLine": false,
-	"bracketSameLine": false
+	"bracketSameLine": false,
+	"importOrder": [
+		"<THIRD_PARTY_MODULES>",
+		"^@/components/(.*)$",
+		"^@/providers/(.*)$",
+		"^@/services/(.*)$",
+		"^@/assets/(.*)$",
+		"^@/hooks/(.*)$",
+		"^../(.*)",
+		"^./(.*)",
+		"(.scss)$"
+	],
+
+	"importOrderSeparation": false,
+	"importOrderSortSpecifiers": false
 }
