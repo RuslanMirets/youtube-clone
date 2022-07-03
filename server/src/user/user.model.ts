@@ -12,7 +12,7 @@ export class UserModel extends TimeStamps {
 	@prop()
 	password: string;
 
-	@prop({ unique: true })
+	@prop()
 	name: string;
 
 	@prop()
