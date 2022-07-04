@@ -18,8 +18,8 @@ export class UserModel extends TimeStamps {
 	@prop()
 	isVerified: boolean;
 
-	@prop()
-	subscribersCount: number;
+	@prop({ default: 0 })
+	subscribersCount?: number;
 
 	@prop()
 	description: string;
