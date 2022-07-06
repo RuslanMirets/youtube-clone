@@ -13,7 +13,7 @@ export class UserService {
 	) {}
 
 	async findOneById(_id: Types.ObjectId) {
-		const user = await this.userModel.findById(_id, '-password');
+		const user = await this.userModel.findById(_id, '-password -__v');
 		if (!user) throw new UnauthorizedException('User not found');
 		return user;
 	}
