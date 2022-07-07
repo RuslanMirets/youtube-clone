@@ -34,6 +34,12 @@ export class VideoController {
 		return this.videoService.findAllByUserId(userId);
 	}
 
+	@Get('by-user-private')
+	@Auth()
+	async findAllByUserIdPrivate(@CurrentUser('_id') _id: Types.ObjectId) {
+		return this.videoService.findAllByUserId(_id, true);
+	}
+
 	@Get()
 	async findAll(@Query('searchTerm') searchTerm?: string) {
 		return this.videoService.findAll(searchTerm);
