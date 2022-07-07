@@ -1,5 +1,4 @@
 import { IsString } from 'class-validator';
-import { IsObjectId } from 'class-validator-mongo-object-id';
 
 export class VideoDto {
 	@IsString()
@@ -16,6 +15,5 @@ export class VideoDto {
 	@IsString()
 	thumbnailPath: string;
 
-	@IsObjectId()
-	userId: string;
+	userId?: string;
 }
