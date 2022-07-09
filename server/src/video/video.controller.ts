@@ -22,9 +22,10 @@ import { VideoService } from './video.service';
 export class VideoController {
 	constructor(private readonly videoService: VideoService) {}
 
-	@Get(':id')
-	async findOneById(@Param('id', IdValidationPipe) id: Types.ObjectId) {
-		return this.videoService.findOneById(id);
+	@Get('get-private/:id')
+	@Auth()
+	async findOneByIdPrivate(@Param('id', IdValidationPipe) id: Types.ObjectId) {
+		return this.videoService.findOneById(id, false);
 	}
 
 	@Get('by-user/:userId')
@@ -48,6 +49,11 @@ export class VideoController {
 	@Get('most-popular')
 	async getMostPopularByViews() {
 		return this.videoService.getMostPopularByViews();
+	}
+
+	@Get(':id')
+	async findOneById(@Param('id', IdValidationPipe) id: Types.ObjectId) {
+		return this.videoService.findOneById(id);
 	}
 
 	@UsePipes(new ValidationPipe())

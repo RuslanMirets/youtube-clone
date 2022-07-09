@@ -17,7 +17,7 @@ export class VideoModel extends TimeStamps {
 	views?: number;
 
 	@prop({ default: 0 })
-	like?: number;
+	likes?: number;
 
 	@prop()
 	description: string;

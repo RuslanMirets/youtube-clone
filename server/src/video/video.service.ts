@@ -1,4 +1,5 @@
 import {
+	BadRequestException,
 	Injectable,
 	NotFoundException,
 	UnauthorizedException,
@@ -15,9 +16,10 @@ export class VideoService {
 		@InjectModel(VideoModel) private readonly videoModel: ModelType<VideoModel>,
 	) {}
 
-	async findOneById(_id: Types.ObjectId) {
+	async findOneById(_id: Types.ObjectId, isPublic = true) {
+		// Check authUserId === video.userId
 		const video = await this.videoModel.findOne(
-			{ _id, isPublic: true },
+			isPublic ? { _id, isPublic: true } : { _id },
 			'-__v',
 		);
 		if (!video) throw new UnauthorizedException('Video not found');
@@ -39,8 +41,8 @@ export class VideoService {
 		}
 
 		return await this.videoModel
-			.find(options)
-			.find({ isPublic: true }, '-__v')
+			.find({ ...options, isPublic: true })
+			.select('-__v')
 			.sort({ createdAt: 'desc' })
 			.exec();
 	}
@@ -98,11 +100,13 @@ export class VideoService {
 		return updateVideo;
 	}
 
-	async updateLikes(_id: string, type: 'inc' | 'dec') {
+	async updateLikes(_id: string, type?: 'inc' | 'dec') {
+		if (!type) throw new BadRequestException('type query is invalid');
+
 		const updateVideo = await this.videoModel
 			.findByIdAndUpdate(
 				_id,
-				{ $inc: { like: type === 'inc' ? 1 : -1 } },
+				{ $inc: { likes: type === 'inc' ? 1 : -1 } },
 				{ new: true },
 			)
 			.exec();
