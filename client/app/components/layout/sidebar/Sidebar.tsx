@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import Button from '@/components/ui/Button/Button';
+import Line from '@/components/ui/Line';
 import { defaultValueAuthState } from '@/providers/AuthProvider';
 import { AuthService } from '@/services/auth/auth.service';
 import { useAuth } from '@/hooks/useAuth';
+import ProfileInfo from './profile-info/ProfileInfo';
 
 const Sidebar: FC = () => {
 	const { user, setData } = useAuth();
@@ -22,22 +24,8 @@ const Sidebar: FC = () => {
 					/>
 				</a>
 			</Link>
-			<div className='profile_info'>
-				<Image src='/img/main/avatar.jpg' alt='' width={70} height={70} />
-				<div className='name'>Nannie Nelson</div>
-				<div className='location'>Montreal, QC</div>
-			</div>
-			<div className='information'>
-				<div className='item'>
-					<div className='top'>278</div>
-					<div className='bottom'>videos</div>
-				</div>
-				<div className='item'>
-					<div className='top'>36.5k</div>
-					<div className='bottom'>subscribers</div>
-				</div>
-			</div>
-			<div className='line'></div>
+			<ProfileInfo />
+			<Line />
 			<ul className='mnu_sidebar'>
 				<li>
 					<a href='#'>

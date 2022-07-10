@@ -22,7 +22,7 @@ export class UserController {
 	@Get('profile')
 	@Auth()
 	async getProfile(@CurrentUser('_id') _id: Types.ObjectId) {
-		return await this.userService.findOneById(_id);
+		return await this.userService.getUser(_id);
 	}
 
 	@UsePipes(new ValidationPipe())
