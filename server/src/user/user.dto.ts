@@ -16,8 +16,5 @@ export class UserDto {
 	location: string;
 
 	@IsString()
-	bannerPath: string;
-
-	@IsString()
 	avatarPath: string;
 }

@@ -62,7 +62,7 @@ export class VideoService {
 	async create(userId: Types.ObjectId) {
 		const defaultValue: VideoDto = {
 			name: '',
-			userId: String(userId),
+			user: String(userId),
 			videoPath: '',
 			description: '',
 			thumbnailPath: '',

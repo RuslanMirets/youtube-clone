@@ -3,12 +3,14 @@ import {
 	Controller,
 	Get,
 	HttpCode,
+	Param,
 	Put,
 	UsePipes,
 	ValidationPipe,
 } from '@nestjs/common';
 import { Types } from 'mongoose';
 import { Auth } from 'src/auth/decorators/auth.decorator';
+import { IdValidationPipe } from 'src/pipes/id.validation.pipe';
 import { CurrentUser } from './decorators/user.decorator';
 import { UserDto } from './user.dto';
 import { UserService } from './user.service';
@@ -32,6 +34,17 @@ export class UserController {
 		@Body() dto: UserDto,
 	) {
 		return this.userService.updateProfile(_id, dto);
+	}
+
+	@UsePipes(new ValidationPipe())
+	@HttpCode(200)
+	@Put(':id')
+	@Auth()
+	async updateUser(
+		@Param('id', IdValidationPipe) id: Types.ObjectId,
+		@Body() dto: UserDto,
+	) {
+		return this.userService.updateProfile(id, dto);
 	}
 
 	@Get('most-popular')
