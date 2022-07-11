@@ -79,16 +79,15 @@ img {
 		}
 		> .profile_info {
 			text-align: center;
-			> img {
+			> span {
 				display: block;
 				border-radius: 50%;
 				margin: 0 auto 7px;
-				width: 70px;
-				height: 70px;
 			}
 			> .name {
 				font-size: 16px;
 				font-weight: 600;
+				margin: 7px 0 4px;
 			}
 			> .location {
 				color: $gray;

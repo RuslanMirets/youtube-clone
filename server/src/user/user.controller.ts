@@ -21,7 +21,7 @@ export class UserController {
 
 	@Get('profile')
 	@Auth()
-	async getProfile(@CurrentUser('_id') _id: Types.ObjectId) {
+	async getProfile(@CurrentUser('_id') _id: string) {
 		return await this.userService.getUser(_id);
 	}
 

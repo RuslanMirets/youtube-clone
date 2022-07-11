@@ -20,6 +20,10 @@ export class CommentService {
 	}
 
 	async create(userId: Types.ObjectId, dto: CommentDto) {
-		return this.commentModel.create({ ...dto, user: userId });
+		return this.commentModel.create({
+			message: dto.message,
+			video: dto.videoId,
+			user: userId,
+		});
 	}
 }

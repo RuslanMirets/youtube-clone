@@ -12,9 +12,10 @@ export class UserService {
 		@InjectModel(UserModel) private readonly userModel: ModelType<UserModel>,
 	) {}
 
-	async getUser(_id: Types.ObjectId) {
+	async getUser(_id: string) {
 		return this.userModel
 			.aggregate()
+			.match({ _id })
 			.lookup({
 				from: 'Video',
 				foreignField: 'user',
@@ -22,10 +23,11 @@ export class UserService {
 				as: 'videos',
 			})
 			.addFields({
-				videoCount: { $size: '$videos' },
+				videosCount: { $size: '$videos' },
 			})
 			.project({ __v: 0, password: 0, videos: 0 })
-			.exec();
+			.exec()
+			.then((data) => data[0]);
 	}
 
 	async findOneById(_id: Types.ObjectId) {

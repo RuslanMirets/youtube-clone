@@ -10,7 +10,7 @@ export const UserService = {
 		return axiosClassic.get<IUser[]>('/user/most-popular');
 	},
 
-	async updateProfile(body: IUserDto) {
-		return axios.put<IUser>('/user/profile', body);
+	async updateProfile(dto: IUserDto) {
+		return axios.put<IUser>('/user/profile', dto);
 	},
 };
