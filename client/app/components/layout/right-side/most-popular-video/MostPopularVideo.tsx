@@ -12,14 +12,14 @@ const MostPopularVideo: FC = () => {
 			<div className='video_item video_live_item'>
 				<div className='thumbnail'>
 					<img src='img/main/live.jpg' alt='' />
-					<div className='live'>Live</div>
+					<div className='hot'>Live</div>
 					<div className='avatar'>
 						<img src='img/main/avatar.jpg' alt='' />
 					</div>
 				</div>
 				<div className='author'>Warren Munoz</div>
 				<div className='name'>Lake House Vacation! Boating, Tubing & More!</div>
-				<div className='descr'>
+				<div className='description'>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa
 					voluptate, natus. Iure vitae dolores suscipit, commodi debitis aut
 					culpa sapiente architecto exercitationem. Ullam laudantium ea hic

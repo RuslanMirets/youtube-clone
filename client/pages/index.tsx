@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		return {
 			props: {
 				newVideos,
-				weeklyVideos: shuffle(newVideos),
+				weeklyVideos: shuffle(newVideos).slice(0, 5),
 				randomVideo,
 				topVideo,
 				topChannels,

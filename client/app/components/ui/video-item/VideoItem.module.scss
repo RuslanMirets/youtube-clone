@@ -1,0 +1,61 @@
+@import '../../../assets/styles/variables';
+
+.video_item {
+	@apply block;
+
+	> .thumbnail {
+		@apply relative;
+
+		> .hot {
+			@apply absolute rounded-sm text-white flex items-center justify-center w-12 h-5 left-2 top-2;
+			font-size: 12px;
+			background-color: rgba(229, 27, 23, 0.76);
+		}
+
+		> time {
+			@apply absolute rounded-sm text-white flex items-center justify-center w-16 h-6 left-2 bottom-2.5;
+			font-size: 12px;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		> .avatar {
+			@apply bg-white p-1 rounded-full absolute;
+			right: 10px;
+			bottom: -18px;
+
+			> span {
+				@apply rounded-full;
+			}
+
+			> img {
+				width: 36px;
+				height: 36px;
+			}
+		}
+	}
+
+	> .author {
+		@apply mt-2;
+		color: $gray;
+	}
+
+	> .name {
+		@apply font-medium mt-1 mb-2 text-sm truncate;
+	}
+
+	> .description {
+		color: $gray;
+		font-size: 12px;
+		margin-bottom: 20px;
+	}
+
+	> .number_info {
+		@apply flex items-center justify-between;
+
+		> div {
+			@apply uppercase font-semibold;
+			font-size: 12px;
+			color: $gray;
+		}
+	}
+}

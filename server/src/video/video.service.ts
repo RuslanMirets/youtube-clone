@@ -44,6 +44,7 @@ export class VideoService {
 			.find({ ...options, isPublic: true })
 			.select('-__v')
 			.sort({ createdAt: 'desc' })
+			.populate('user', 'name')
 			.exec();
 	}
 
