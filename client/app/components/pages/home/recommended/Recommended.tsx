@@ -6,8 +6,7 @@ const Recommended: FC = () => {
 		<div id='recommended'>
 			<div className='top_block'>
 				<div className='left_title title_gray'>
-					<h2>Recommended</h2>
-					<div className='showmore'>Show More</div>
+					<h2>Newest video</h2>
 				</div>
 				<div className='sort'>By View Trending</div>
 			</div>

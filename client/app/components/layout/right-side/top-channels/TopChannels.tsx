@@ -6,7 +6,6 @@ const TopChannels: FC = () => {
 		<div id='top_channels'>
 			<div className='title_gray'>
 				<h2>Top Channels</h2>
-				<div className='showmore'>Show More</div>
 			</div>
 
 			<div className='list_channels'>

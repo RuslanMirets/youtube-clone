@@ -7,13 +7,11 @@
 
 			> .hot {
 				@apply absolute rounded-sm text-white flex items-center justify-center w-12 h-5 left-2 top-2;
-				font-size: 12px;
 				background-color: rgba(229, 27, 23, 0.76);
 			}
 
 			> time {
 				@apply absolute rounded-sm text-white flex items-center justify-center w-16 h-6 left-1.5 bottom-1.5;
-				font-size: 12px;
 				background-color: rgba(0, 0, 0, 0.5);
 			}
 
@@ -29,18 +27,17 @@
 		}
 
 		> .author {
-			@apply mt-2;
+			@apply mt-2 font-normal text-base;
 			color: $gray;
 		}
 
 		> .name {
-			@apply font-medium mt-1 mb-2 text-sm truncate;
+			@apply font-semibold mt-1 mb-3 text-lg truncate;
 		}
 	}
 
 	> .description {
 		color: $gray;
-		font-size: 12px;
 		margin-bottom: 20px;
 	}
 
@@ -49,7 +46,6 @@
 
 		> div {
 			@apply uppercase font-semibold;
-			font-size: 12px;
 			color: $gray;
 		}
 	}

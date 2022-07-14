@@ -7,10 +7,11 @@
 	}
 
 	> .name {
-		@apply text-lg font-semibold mt-2 mb-1;
+		@apply text-xl font-bold mt-2 mb-1;
 	}
 
 	> .location {
+		@apply text-base;
 		color: $gray;
 	}
 }
@@ -22,7 +23,7 @@
 		@apply text-center;
 
 		> .top {
-			@apply text-lg font-semibold;
+			@apply text-lg font-bold;
 		}
 
 		> .bottom {

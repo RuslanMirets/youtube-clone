@@ -28,8 +28,8 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar }) => {
 							<div className={styles.avatar}>
 								<Image
 									src={item.user?.avatarPath || ''}
-									width={36}
-									height={36}
+									width={50}
+									height={50}
 									alt={item.user?.name}
 								/>
 							</div>
