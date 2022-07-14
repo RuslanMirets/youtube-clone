@@ -1,0 +1,33 @@
+@import '../../../assets/styles/variables';
+
+.profile_info {
+	@apply text-center;
+	> span {
+		@apply block rounded-full mx-auto mb-2;
+	}
+
+	> .name {
+		@apply text-lg font-semibold mt-2 mb-1;
+	}
+
+	> .location {
+		color: $gray;
+	}
+}
+
+.information {
+	@apply flex items-center justify-around mt-7;
+
+	> .item {
+		@apply text-center;
+
+		> .top {
+			@apply text-lg font-semibold;
+		}
+
+		> .bottom {
+			@apply mt-1 uppercase;
+			color: $gray;
+		}
+	}
+}

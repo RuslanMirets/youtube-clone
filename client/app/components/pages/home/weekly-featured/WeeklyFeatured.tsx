@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
+import VideoItem from '@/components/ui/video-item/VideoItem';
 import { IVideo } from '@/types/video.interface';
 import Slider from './Slider';
 
@@ -24,30 +25,7 @@ const WeeklyFeatured: FC<IWeeklyFeatured> = ({ weeklyVideos, randomVideo }) => {
 			</div>
 
 			<div className='top_video'>
-				<div className='video_item'>
-					<div className='thumbnail'>
-						<img src='img/main/3.jpg' alt='' />
-						<time>28:32</time>
-						<div className='avatar'>
-							<img src='img/main/avatar.jpg' alt='' />
-						</div>
-					</div>
-					<div className='author'>Warren Munoz</div>
-					<div className='name'>
-						Lake House Vacation! Boating, Tubing & More!
-					</div>
-					<div className='description'>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
-						animi aut vel alias voluptate, odio. Tempora sequi et itaque enim a,
-						aut excepturi adipisci quam, aspernatur, eaque obcaecati dolor
-						tenetur :)
-					</div>
-					<div className='number_info'>
-						<div className='views'>VIEWS 29.2K</div>
-						<div className='likes'>LIKES 1.6K</div>
-						<div className='date'>3DS AGO</div>
-					</div>
-				</div>
+				<VideoItem item={randomVideo} isLarge isAvatar />
 			</div>
 		</div>
 	);

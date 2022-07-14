@@ -7,7 +7,7 @@ export interface IVideo {
 	thumbnailPath: string;
 	videoPath: string;
 	views: number;
-	like: number;
+	likes: number;
 	user?: IUser;
 	isPublic?: boolean;
 	createdAt: string;

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import Layout from '../../layout/Layout';
@@ -8,7 +7,7 @@ import { IHome } from './home.interface';
 import Recommended from './recommended/Recommended';
 import WeeklyFeatured from './weekly-featured/WeeklyFeatured';
 
-const Home: FC<IHome> = ({ weeklyVideos, randomVideo }) => {
+const Home: FC<IHome> = ({ weeklyVideos, randomVideo, newVideos }) => {
 	const { user } = useAuth();
 
 	return (
