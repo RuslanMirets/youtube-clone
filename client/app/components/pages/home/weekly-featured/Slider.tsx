@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
 import { Autoplay } from 'swiper';
 import 'swiper/css';
@@ -15,7 +14,7 @@ const Slider: FC<{ videos: IVideo[] }> = ({ videos }) => {
 			slidesPerView={2}
 			onSlideChange={() => console.log('slide change')}
 			onSwiper={(swiper) => console.log(swiper)}
-			// autoplay={{ delay: 4000 }}
+			autoplay={{ delay: 4000 }}
 		>
 			{videos.map((video) => (
 				<SwiperSlide key={video._id}>

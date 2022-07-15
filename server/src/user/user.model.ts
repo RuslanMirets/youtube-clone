@@ -15,7 +15,7 @@ export class UserModel extends TimeStamps {
 	@prop()
 	name: string;
 
-	@prop()
+	@prop({ default: false })
 	isVerified: boolean;
 
 	@prop({ default: 0 })

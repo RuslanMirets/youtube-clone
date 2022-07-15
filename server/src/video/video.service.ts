@@ -30,6 +30,7 @@ export class VideoService {
 		return await this.videoModel
 			.find({ views: { $gt: 0 } }, '-__v')
 			.sort({ views: -1 })
+			.populate('user', 'name avatarPath')
 			.exec();
 	}
 

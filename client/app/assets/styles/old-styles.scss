@@ -251,10 +251,6 @@ img {
 	> .left_side {
 		#recommended {
 			> .top_block {
-				display: -webkit-flex;
-				display: -moz-flex;
-				display: -ms-flex;
-				display: -o-flex;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
@@ -264,20 +260,13 @@ img {
 				}
 			}
 			> .catalog {
-				display: -webkit-flex;
-				display: -moz-flex;
-				display: -ms-flex;
-				display: -o-flex;
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: space-between;
-				> .video_item {
+				gap: 20px;
+				> div {
+					flex: 1 1 calc((100% / 4) - 2rem);
 					width: 23%;
-					margin-bottom: 25px;
-				}
-				> .video_big_item {
-					width: 46%;
-					position: relative;
+					margin-bottom: 10px;
 				}
 			}
 		}
@@ -298,29 +287,32 @@ img {
 		}
 		#top_channels {
 			.title_gray {
-				margin-bottom: 15px;
+				margin-bottom: 20px;
 			}
 			.list_channels {
 				> .channel {
-					margin-bottom: 15px;
+					margin-bottom: 25px;
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
 					.info_left {
 						display: flex;
 						align-items: center;
-						> img {
+						> a {
+							display: flex;
+							justify-content: center;
+							align-items: center;
 							margin-right: 15px;
-							width: 70px;
-							height: 70px;
-							border-radius: 50%;
+							> span {
+								border-radius: 50%;
+							}
 						}
 						> .info {
 							> .name {
 								position: relative;
 								font-weight: 600;
 								font-size: 1.2rem;
-								&::after {
+								&.verified::after {
 									content: '';
 									width: 15px;
 									height: 15px;

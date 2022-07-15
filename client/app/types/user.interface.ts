@@ -7,6 +7,7 @@ export interface IUser {
 	location: string;
 	subscribersCount: number;
 	videosCount?: number;
+	isVerified?: boolean;
 	createdAt: string;
 	updatedAt: string;
 }

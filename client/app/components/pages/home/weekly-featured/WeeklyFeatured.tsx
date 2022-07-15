@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
 import VideoItem from '@/components/ui/video-item/VideoItem';
 import { IVideo } from '@/types/video.interface';

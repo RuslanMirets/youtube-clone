@@ -2,6 +2,7 @@ import shuffle from 'lodash/shuffle';
 import type { GetStaticProps, NextPage } from 'next';
 import Home from '@/components/pages/home/Home';
 import { IHome } from '@/components/pages/home/home.interface';
+import { UserService } from '@/services/user.service';
 import { VideoService } from '@/services/video.service';
 
 const HomePage: NextPage<IHome> = (props) => {
@@ -11,8 +12,12 @@ const HomePage: NextPage<IHome> = (props) => {
 export const getStaticProps: GetStaticProps = async () => {
 	try {
 		const { data: newVideos } = await VideoService.getAll();
-		const topVideo = {};
-		const topChannels: any[] = [];
+		const topVideo = await VideoService.getMostPopular().then(
+			({ data }) => data[0],
+		);
+		const topChannels = await UserService.getMostPopular().then(
+			({ data }) => data,
+		);
 
 		return {
 			props: {

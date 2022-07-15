@@ -4,4 +4,5 @@ export interface IVideoItem {
 	item: IVideo;
 	isLarge?: boolean;
 	isAvatar?: boolean;
+	tag?: string;
 }

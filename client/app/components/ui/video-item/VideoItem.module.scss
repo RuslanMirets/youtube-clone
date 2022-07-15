@@ -6,7 +6,7 @@
 			@apply relative;
 
 			> .hot {
-				@apply absolute rounded-sm text-white flex items-center justify-center w-12 h-5 left-2 top-2;
+				@apply absolute rounded-sm text-white flex items-center justify-center w-14 h-6 left-2 top-2;
 				background-color: rgba(229, 27, 23, 0.76);
 			}
 
@@ -18,7 +18,7 @@
 			> .avatar {
 				@apply bg-white p-1 rounded-full absolute;
 				right: 10px;
-				bottom: -18px;
+				bottom: -24px;
 
 				> span {
 					@apply rounded-full;

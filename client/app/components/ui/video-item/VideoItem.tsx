@@ -10,7 +10,7 @@ import { IVideoItem } from './video-item.interface';
 
 dayjs.extend(relativeTime);
 
-const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar }) => {
+const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar, tag }) => {
 	return (
 		<div className={styles.video_item}>
 			<Link href={`/v/${item._id}`}>
@@ -24,6 +24,7 @@ const VideoItem: FC<IVideoItem> = ({ item, isLarge, isAvatar }) => {
 							layout='responsive'
 						/>
 						<VideoDuration videoPath={item.videoPath} />
+						{tag && <div className={styles.hot}>{tag}</div>}
 						{isAvatar && (
 							<div className={styles.avatar}>
 								<Image
